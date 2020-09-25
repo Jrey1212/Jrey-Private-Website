@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- Project1.html   Joshua Reynaud -->
+<!-- ============================== -->
+
+<html>
+ <head>
+  <title> CS110 Project 1 </title>
+  <script type="text/javascript">
+  function ConvertToFeet()
+	// Assumes: milebox contains a distance in miles
+	// Results: displays the distance in feet in outputDiv1
+  {
+	var mile, feet;
+	mile = parseFloat(document.getElementById('mileBox').value);
+	feet = mile*5280;
+	document.getElementById('outputDiv1').innerHTML=
+	 mile + ' miles = ' + feet + ' feet. <br><hr>';
+  }
+  
+  function ConvertToOunces()
+	// Assumes: poundBox contains a weight in pounds
+	// Results: displays the weight in ounces in outputDiv2
+  {
+	var pound, ounce;
+	pounds = parseFloat(document.getElementById('poundBox').value);
+	ounces = pounds*16;
+	document.getElementById('outputDiv2').innerHTML=
+	  pounds + ' pounds = ' + ounces + ' Ounces. <br><hr>';
+  }
+  
+  function ConvertToKPH()
+	// Assumes: mphBox contains a speed in miles-per-hour
+	// Results: displays a speed in kilometers-per-hour in outputDiv3
+  {
+	var mph, kph;
+	mph = parseFloat(document.getElementById('mphBox').value);
+	kph = mph*1.609344;
+	document.getElementById('outputDiv3').innerHTML=
+	  mph + ' miles per hour = ' + kph + ' kilometers per hour. <br><hr>';
+  }
+  
+  function ConvertToCelsius()
+	// Assumes: fahrenheitBox contains a temperature in Fahrenheit
+	// Results: displays a temperature in Celsius in outputDiv4
+  {
+	var fDegree, cDegree;
+	fDegree = parseFloat(document.getElementById('fahrenheitBox').value);
+	cDegree = (fDegree - 32)*(5/9);
+	document.getElementById('outputDiv4').innerHTML=
+	  fDegree + ' degrees Fahrenheit = ' + cDegree + ' degrees Celsius. <br><hr>';
+  }
+  
+  function ConverToFahrenheit()
+	// Assumes: celsiusBox contains a temperature in Celsius
+	// Results: displays a temperature in Fahrenheit in outputDiv5
+  {
+	var cDegree, fDegree;
+	cDegree = parseFloat(document.getElementById('celsiusBox').value);
+	fDegree = (cDegree*(9/5)) + 32;
+	document.getElementById('outputDiv5').innerHTML=
+	  cDegree + ' degrees Celsius = ' + fDegree + ' degrees Fahrenheit. <br><hr>';
+  }
+  </script>
+ </head>
+ 
+ <body>
+  <h2> CS110 Metric and English Systems </h2>
+  <p>
+   Type a value in Miles: <input type="text" id="mileBox" size=6 value="">
+   <input type="button" value="Convert to Feet" onclick="ConvertToFeet();"> 
+   <br><br>
+   
+   Type a value in Pounds: <input type="text" id="poundBox" size=6 value="">
+   <input type="button" value="Convert to Ounces" onclick="ConvertToOunces();">
+   <br><br>
+   
+   Type a value in MPH (Miles per Hour): <input type="text" id="mphBox" size=6 value="">
+   <input type="button" value="Convert to KPH" onclick="ConvertToKPH();">
+   <br><br>
+   
+   Type a value in Fahrenheit: <input type="text" id="fahrenheitBox" size=6 value="">
+   <input type="button" value="Convert to Celsius" onclick="ConvertToCelsius();">
+   <br><br>
+   
+   Type a value in Celsius: <input type="text" id="celsiusBox" size=6 value="">
+   <input type="button" value="Convert to Fahrenheit" onclick="ConverToFahrenheit();">
+   <br><br>
+  
+  </p>
+  
+  <hr>
+  <div id="outputDiv1"></div>
+  <div id="outputDiv2"></div>
+  <div id="outputDiv3"></div>
+  <div id="outputDiv4"></div>
+  <div id="outputDiv5"></div>
+ </body>
+</html>

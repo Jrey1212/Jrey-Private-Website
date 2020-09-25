@@ -1,0 +1,72 @@
+<!doctype html>
+<!-- Lab7.html by Joshua Reynaud -->
+<!-- =========================== -->
+<html>
+ <head>
+ 	<title> Lab7 </title>
+ 	<script type="text/javascript">
+ 		function Calculate()
+ 			//Assumes: package weight was entered in the text boxes
+ 			//Results: displays postal weight and costs in the textbox
+ 			//start function block
+ 		{
+ 			var weight;
+ 			weight=parseFloat(document.getElementById('weightBox').value);
+
+ 			if (document.getElementById('letterRadio').checked) {
+ 				// letters $0.55 first oz + Each additional ounce will cos $0.20
+ 				var cost = 0.55 + (weight-1)  * 0.20;
+ 				var finalCost = cost.toFixed(2);
+ 				var message = "Your item weighs: " + weight + " ounces.";
+ 				document.getElementById('messageArea').value = message + "\nYour letter will cost $" + finalCost;
+ 			}
+ 			else if (document.getElementById('packageRadio').checked) {
+ 				// Packages $0.40/oz
+ 				var cost = weight * 0.40;
+ 				var finalCost = cost.toFixed(2);
+ 				var message = "Your item weighs: " + weight + " ounces.";
+ 				document.getElementById('messageArea').value = message + "\nYour package will cost $" + finalCost;
+ 			}
+
+ 			else {
+ 				// Books $1.10 first pound + 0.45/lb thereafter
+ 				var cost = (Math.ceil (weight)-1) * 0.45 + 1.10;
+ 				var message = "Your item weighs: " + weight + " pounds.";
+ 				document.getElementById('messageArea').value = message + "\nYour book will cost $" + cost;
+ 			}
+ 		}
+
+ 		function StartOver()
+ 			// Clears all fields
+ 		{
+ 			document.getElementById('weightBox').value="";
+ 			document.getElementById('messageArea').value="";
+ 			document.getElementById('letterRadio').checked=false;
+ 			document.getElementById('packageRadio').checked=false;
+ 			document.getElementById('bookRadio').checked=false;
+ 		}
+ 	</script>
+ </head>
+
+ <body bgcolor="pink">
+ 	<h2> Lab7 Postal Helper </h2>
+ 	<p> Are you sending a letter, package, or book? <br> </p>
+ 	Letter <input type="radio" id="letterRadio" name="postal">&nbsp;&nbsp;
+ 	Package <input type="radio" id="packageRadio" name="postal">&nbsp;&nbsp;
+ 	Book <input type="radio" id="bookRadio" name="postal">
+
+ 	<p> 
+ 		How much does it weigh? (Please answer in ounces, except for book - book is in pounds only)<br>
+ 		<input type="text" id="weightBox" value="">
+ 	</p>
+
+ 	<p>
+ 		<textarea id="messageArea" rows=6 cols=40></textarea> 
+ 	</p>
+
+ 	<p>
+ 		<input type="button" value="Calculate my cost!" onclick="Calculate();">&nbsp;&nbsp;
+ 		<input type="button" value="Start Over" onclick="StartOver();">
+ 	</p>
+ </body>
+</html>

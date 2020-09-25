@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- Project 2.html Joshua Reynaud -->
+<!-- The Project2.html page is a survey for a Sporting Goods Shop -->
+
+<html>
+ <head>
+ 	<title> Assignment 9 </title>
+ 	<script type="text/javascript">
+ 		function findLength()
+ 		{
+ 			var str;
+ 			str = document.getElementById('strBox1').value;
+ 				document.getElementById('outputDiv1').innerHTML = 
+ 			'"' + str + '"' + ' has the length of: ' + str.length + '<br><br>';
+ 		} //close findLength()
+
+ 		function upperCase()
+ 		{
+ 			var str;
+ 			str = document.getElementById('strBox2').value;
+ 				document.getElementById('outputDiv2').innerHTML = 
+ 			'"' + str + '"' + ' in uppercase letters is: ' + str.toUpperCase() + '<br><br>';
+ 		} //close upperCase()
+
+ 		function lowerCase()
+ 		{
+ 			var str;
+ 			str = document.getElementById('strBox3').value;
+ 				document.getElementById('outputDiv3').innerHTML = 
+ 			'"' + str + '"' + ' in lowercase letters is: ' + str.toLowerCase() + '<br><br>';
+ 		} //close lowerCase()
+
+ 		function reverse()
+ 		{
+ 			var str, index;
+ 			var reverseStr='';
+ 			str = document.getElementById('strBox4').value;
+
+ 			index = 0
+ 				while (index < str.length) {
+ 					reverseStr = str.charAt(index) + reverseStr;
+ 					index = index + 1;
+ 				}
+ 			document.getElementById('outputDiv4').innerHTML = 
+ 			'"' + str + '"' + ' in reversed order is: ' + reverseStr + '<br><br>';
+ 		} //close reverse()
+ 	</script>
+ </head>
+
+ <body bgcolor="pink">
+ 	<h2> Assignment 9 demonstrates several string properties and operations </h2>
+ 	<hr>
+ 	<p>
+ 		Enter a string: <input type="text" id="strBox1" size=20 value="">
+ 		<input type="button" value="Click to find out the length" onclick="findLength();">
+ 	</p>
+ 	<div id = "outputDiv1"></div>
+ 	<hr>
+ 	<p>
+ 		Enter an all-lowercase string: <input type="text" id="strBox2" size=20 value="">
+ 		<input type="button" value="Click to convert to uppercase" onclick="upperCase();">
+ 	</p>
+ 	<div id = "outputDiv2"></div>
+ 	<hr>
+ 	<p>
+ 		Enter an all-uppercase string: <input type="text" id="strBox3" size=20 value="">
+ 		<input type="button" value="Click to convert to lowercase" onclick="lowerCase();">
+ 	</p>
+ 	<div id="outputDiv3"></div>
+ 	<hr>
+ 	<p>
+ 		Enter a string: <input type="text" id="strBox4" size=20 value="">
+ 		<input type="button" value="Click to reverse the order of text" onclick="reverse();">
+ 	</p>
+ 	<div id = "outputDiv4"></div>
+ </body>
+</html>

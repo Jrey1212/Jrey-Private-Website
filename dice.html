@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- dice.html		Joshua Reynaud -->
+<!-- ============================= -->
+
+<html>
+ <head>
+  <title> Image Randomizer </title>
+  <script type="text/javascript">
+   function SelectImage()
+   // Assumes: images are in C:\Users\jrey1\OneDrive\html\School\randomness\dice
+   //multiplication of the function means that is the maximum of images to search through
+   //addition of the function means that's where the function starts at (ex: img.1 = +1 of the 0 
+   //(in the parantheses)
+   //originally meant as a way to roll dice through the use of images on HTML.  I put my own images instead.
+   // Results: randomly selects one of six images with the click of a button
+   {
+      roll=Math.floor(Math.random()*6)+1;
+	  imgName='face' + roll + '.PNG';
+	  document.getElementById('faceIMG').src = imgName;
+   }
+  </script>
+ </head>
+ 
+ <body>
+	<div style="text-align:center">
+	 <p>
+	  <img id="faceIMG" alt="face image" src="face1.PNG" height=500 width=700>
+	 </p>
+	 <input type="button" value="Click to Randomize" onclick="SelectImage();">
+	</div>
+ </body>
+</html>

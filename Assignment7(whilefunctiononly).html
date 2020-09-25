@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Assignment7.html by Joshua Reynaud -->
+<!-- Assignment7.html dislplays a countdown from a specified number by using a loop -->
+
+<html>
+ <head>
+ 	<title> Assignment 7 </title>
+ 	<script type="text/javascript">
+ 		function countdown()
+ 		// Assumes: countBox contains a non-negative integer
+ 		// Results: displays a countdown form that number in outputDiv
+
+ 		{ //start of function
+ 			var count;
+ 			count = parseFloat(document.getElementById('countBox').value);
+ 			
+ 			while (count > 0) {
+ 				document.getElementById('outputDiv').innerHTML=
+ 				 document.getElementById('outputDiv').innerHTML + count + '<br>';
+ 				 count = count - 1;
+ 			}
+
+ 			document.getElementById('outputDiv').innerHTML =
+ 			 document.getElementById('outputDiv').innerHTML + 'BLASTOFF!';
+ 		}
+ 	</script>
+ </head>
+
+ <body bgcolor="aqua">
+ 	<h2> Assignment 7 displays a countdown <br>
+ 	from a specified number by using a loop </h2>
+
+ 	<p>
+ 		Start of the countdown: <input type="text" id="countBox" size=4 value="">
+ 	</p>
+
+ 	<input type="button" value="Begin Countdown" onclick="countdown();">
+
+ 	<hr>
+ 	<div id="outputDiv"></div>
+ </body>
+</html>

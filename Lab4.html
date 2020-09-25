@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- Lab4.html    Joshua Reynaud -->
+<!-- =========================== -->
+
+<html>
+ <head>
+  <title> Lab 4 Grade Calculator </title>
+ </head>
+ 
+ <body>
+  <h2> Grade Calculation </h2>
+  <h3> (On a scale of 0 to a 100 Percent) </h3>
+  
+  <p>
+   Enter your name: <input type="text" id="nameBox" size=12 value=""> <br><br>
+   Homework Average: <input type="text" id="homeworkBox" size=12 value=""> <br><br>
+   Lab Average: <input type="text" id="labsBox" size=12 value=""> <br><br>
+   Midterm Score: <input type="text" id="midtermBox" size=12 value=""> <br><br>
+   Final Exam Score: <input type="text" id="examBox" size=12 value="">
+  </p>
+  <br>
+  
+  <input type="button" value="Calculate Course Grade"
+   onclick="homework=parseFloat(document.getElementById('homeworkBox').value);
+            labs=parseFloat(document.getElementById('labsBox').value);
+		    midterm=parseFloat(document.getElementById('midtermBox').value);
+			finalExam=parseFloat(document.getElementById('examBox').value);
+			overall_Average=homework*(1/4) + labs*(1/5) + midterm*(1/4) + finalExam*(3/10);
+				document.getElementById('outputDiv').innerHTML=
+				'Hello ' + document.getElementById('nameBox').value + ', your overall course average grade is: ' + overall_Average;">
+				
+<!-- Don't forget the parantheses! Also, do not put spaces between "=" and the surrounding words, unless a new separate line is required -->
+
+  <hr>
+  <br><br>
+  <div id="outputDiv"></div>
+ </body>
+</html>
